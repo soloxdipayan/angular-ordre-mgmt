@@ -15,7 +15,7 @@ import { DashboardComponent } from "./dashboard-component/dashboard-component";
   styleUrl: './app.css'
 })
 export class App {
-  title = signal('Order Management System');
+  title = 'Order Management System';
   
   // Local data from your mock file
   orders = MOCK_ORDERS;

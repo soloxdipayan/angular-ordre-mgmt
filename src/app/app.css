@@ -1,1 +1,10 @@
+#start-div{
+    display: flex;
+    height: 100vh;
+}
 
+main {
+    flex: 1; 
+    padding: 20px; 
+    background-color: #f4f7f6;
+}
