@@ -1,0 +1,15 @@
+<div class="dashboard-container">
+  <h2>Welcome to the Dashboard</h2>
+  
+  <div class="recent-card" *ngIf="latestOrder">
+    <h3>Most Recent Activity</h3>
+    <p><strong>Order ID:</strong> {{ latestOrder.id }}</p>
+    
+    
+    <p><strong>Amount:</strong> ₹{{ latestOrder.totalAmount }}</p>
+    
+    <p><strong>Current Status:</strong> {{ latestOrder.status }}</p>
+    
+    <p>Placed on: {{ latestOrder.date }}</p>
+  </div>
+</div>

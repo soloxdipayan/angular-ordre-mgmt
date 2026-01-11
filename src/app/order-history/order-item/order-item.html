@@ -1,0 +1,47 @@
+<div class="order-card" [class.highlight]="orderData.status === 'Delivered'">
+  
+  <div class="order-info">
+    <p><strong>Order ID:</strong> {{ orderData.id }}</p>
+    <p><strong>Total:</strong> ₹{{ orderData.totalAmount }}</p>
+    <p><strong>Status:</strong> 
+      <span class="status-label">{{ orderData.status }}</span>
+    </p>
+  </div>
+
+  <div class="action-buttons" *ngIf="!showReasonInput">
+    
+    <button 
+      *ngIf="orderData.status !== 'Delivered' && orderData.status !== 'Cancelled'" 
+      (click)="initiateAction('Cancelled')" 
+      class="btn-cancel">
+      Cancel Order
+    </button>
+
+    <button 
+      *ngIf="orderData.status === 'Delivered' && orderData.status !== 'Returned'" 
+      (click)="initiateAction('Returned')" 
+      class="btn-return">
+      Return Order
+    </button>
+  </div>
+
+  <div class="reason-form" *ngIf="showReasonInput">
+    <p>Reason for {{ pendingAction }}:</p>
+    
+    <input 
+      type="text" 
+      [(ngModel)]="userReason" 
+      placeholder="Why are you doing this?">
+
+    <div class="form-controls">
+      <button 
+        [disabled]="userReason.length < 5" 
+        (click)="confirmAction()">
+        Confirm
+      </button>
+      
+      <button (click)="showReasonInput = false">Back</button>
+    </div>
+  </div>
+
+</div>

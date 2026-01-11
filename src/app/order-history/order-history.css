@@ -1,0 +1,17 @@
+.history-container {
+  padding: 20px;
+  /* This ensures the content doesn't touch the edges */
+}
+
+.order-grid {
+  display: grid;
+  /* Creates as many columns as fit (minimum 300px wide) */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; /* Space between the cards */
+  align-items: start;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}

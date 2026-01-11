@@ -1,0 +1,12 @@
+<div class="history-container">
+  <h2>Order History</h2>
+
+  <div class="order-grid">
+    <div *ngFor="let item of myOrders">
+      <app-order-item 
+        [orderData]="item" 
+        (actionTaken)="updateOrder($event)">
+      </app-order-item>
+    </div>
+  </div>
+</div>
