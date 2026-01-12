@@ -21,3 +21,8 @@ button {
 button:hover {
   background-color: #34495e;
 }
+
+button.active {
+  background-color: #003f7f;
+  border-left: 4px solid yellow;
+}
